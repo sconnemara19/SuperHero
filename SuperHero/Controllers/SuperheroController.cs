@@ -18,7 +18,17 @@ namespace SuperHero.Controllers
         // GET: Superhero
         public ActionResult Index()
         {
-            return View();
+
+            var superheroList = new List<Superhero>
+            {
+                new Superhero() {SuperheroId = 1, Superheroname = "IronMan", alterEgo = "Tony Stark", primaryAbility= "Being Smart", secondaryAbility ="Being Rich", catchphrase ="I am IronMan" },
+                new Superhero() {SuperheroId = 2, Superheroname = "Star-Lord", alterEgo = "Peter Quill", primaryAbility= "Stealing", secondaryAbility= "Super Human Strength", catchphrase="Keep Karate In Your Heart"},
+                new Superhero() {SuperheroId = 3, Superheroname = " AntMan", alterEgo = "Scott Lang", primaryAbility= "turning small", secondaryAbility = "stealing", catchphrase="Hello. I'm Ant-Man"},
+                new Superhero() {SuperheroId = 4, Superheroname = "Venom",alterEgo = "Eddie Brock", primaryAbility= "Super strength",secondaryAbility="Shape shifting",catchphrase="We are Venom"}
+            };
+
+            
+            return View(superheroList);
         }
 
         // GET: Superhero/Details/5
@@ -54,7 +64,7 @@ namespace SuperHero.Controllers
         // GET: Superhero/Edit/5
         public ActionResult Edit(int id)
         {
-            Superhero superhero = context.Superheroes.Where(s => s.Id == id).FirstOrDefault();
+            Superhero superhero = context.Superheroes.Where(s => s.SuperheroId == id).FirstOrDefault();
             return View(superhero);
         }
 
