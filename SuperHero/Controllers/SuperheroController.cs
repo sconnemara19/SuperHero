@@ -19,22 +19,24 @@ namespace SuperHero.Controllers
         public ActionResult Index()
         {
 
-            var superheroList = new List<Superhero>
-            {
-                new Superhero() {SuperheroId = 1, Superheroname = "IronMan", alterEgo = "Tony Stark", primaryAbility= "Being Smart", secondaryAbility ="Being Rich", catchphrase ="I am IronMan" },
-                new Superhero() {SuperheroId = 2, Superheroname = "Star-Lord", alterEgo = "Peter Quill", primaryAbility= "Stealing", secondaryAbility= "Super Human Strength", catchphrase="Keep Karate In Your Heart"},
-                new Superhero() {SuperheroId = 3, Superheroname = " AntMan", alterEgo = "Scott Lang", primaryAbility= "turning small", secondaryAbility = "stealing", catchphrase="Hello. I'm Ant-Man"},
-                new Superhero() {SuperheroId = 4, Superheroname = "Venom",alterEgo = "Eddie Brock", primaryAbility= "Super strength",secondaryAbility="Shape shifting",catchphrase="We are Venom"}
-            };
-
-            
-            return View(superheroList);
+            return RedirectToAction("List");
         }
+
+        public ActionResult List()
+        {
+            List<Superhero> superheroes = context.Superheroes.ToList();
+           
+            return View(superheroes);
+
+
+        }
+       
 
         // GET: Superhero/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            Superhero superhero = context.Superheroes.Where(s => s.SuperheroId == id).FirstOrDefault();
+            return View(superhero);
         }
 
         // GET: Superhero/Create
@@ -53,7 +55,7 @@ namespace SuperHero.Controllers
                 // TODO: Add insert logic here
                 context.Superheroes.Add(superhero);
                 context.SaveChanges(); 
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
             catch
             {
@@ -81,9 +83,9 @@ namespace SuperHero.Controllers
                dbsuperhero.primaryAbility = superhero.primaryAbility;
                dbsuperhero.secondaryAbility = superhero.secondaryAbility;
                dbsuperhero.catchphrase = superhero.catchphrase;
-                return RedirectToAction("Index");
+                context.SaveChanges();
+                return RedirectToAction("List");
 
-                
             }
             catch
             {
@@ -94,18 +96,22 @@ namespace SuperHero.Controllers
         // GET: Superhero/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Superhero superhero = context.Superheroes.Where(s => s.SuperheroId == id).FirstOrDefault();
+            return View(superhero);
         }
 
         // POST: Superhero/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Superhero superhero)
         {
             try
             {
-                // TODO: Add delete logic here
+                superhero = context.Superheroes.Where(s => s.SuperheroId == id).FirstOrDefault();
+                context.Superheroes.Remove(superhero);
+                context.SaveChanges();
+                return RedirectToAction("List");
 
-                return RedirectToAction("Index");
+                
             }
             catch
             {

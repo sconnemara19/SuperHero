@@ -104,3 +104,4 @@ C:\Users\simon\Desktop\Visual Studio\SuperHero\SuperHero\obj\Debug\SuperHero.dll
 C:\Users\simon\Desktop\Visual Studio\SuperHero\SuperHero\obj\Debug\SuperHero.pdb
 C:\Users\simon\Desktop\Visual Studio\SuperHero\SuperHero\obj\Debug\SuperHero.Migrations.InitialMigration.resources
 C:\Users\simon\Desktop\Visual Studio\SuperHero\SuperHero\obj\Debug\SuperHero.csproj.GenerateResource.cache
+C:\Users\simon\Desktop\Visual Studio\SuperHero\SuperHero\obj\Debug\SuperHero.Migrations.Restart.resources

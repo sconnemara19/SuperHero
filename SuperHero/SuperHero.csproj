@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201910241904380_InitialMigration.Designer.cs">
       <DependentUpon>201910241904380_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910251511310_Restart.cs" />
+    <Compile Include="Migrations\201910251511310_Restart.Designer.cs">
+      <DependentUpon>201910251511310_Restart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -187,10 +191,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-Darkly.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Image\https___blogs-images.forbes.com_markhughes_files_2018_10_VENOM-poster-1-e1538595032688.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -216,7 +222,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -242,11 +247,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Delete.cshtml" />
-    <Content Include="Views\Details.cshtml" />
-    <Content Include="Views\Edit.cshtml" />
-    <Content Include="Views\Superhero\List.cshtml" />
     <Content Include="Views\Superhero\Create.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Superhero\Delete.cshtml" />
+    <Content Include="Views\Superhero\Details.cshtml" />
+    <Content Include="Views\Superhero\Edit.cshtml" />
+    <Content Include="Views\Superhero\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -267,6 +273,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201910241904380_InitialMigration.resx">
       <DependentUpon>201910241904380_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910251511310_Restart.resx">
+      <DependentUpon>201910251511310_Restart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
