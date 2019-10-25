@@ -75,8 +75,15 @@ namespace SuperHero.Controllers
             try
             {
                 // TODO: Add update logic here
-
+              Superhero dbsuperhero = context.Superheroes.Where(s => s.SuperheroId == id).FirstOrDefault();
+               dbsuperhero.Superheroname = superhero.Superheroname;
+               dbsuperhero.alterEgo = superhero.alterEgo;
+               dbsuperhero.primaryAbility = superhero.primaryAbility;
+               dbsuperhero.secondaryAbility = superhero.secondaryAbility;
+               dbsuperhero.catchphrase = superhero.catchphrase;
                 return RedirectToAction("Index");
+
+                
             }
             catch
             {

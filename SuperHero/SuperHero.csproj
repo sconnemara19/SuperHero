@@ -242,11 +242,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Superhero\Create.cshtml" />
     <Content Include="Views\Delete.cshtml" />
     <Content Include="Views\Details.cshtml" />
     <Content Include="Views\Edit.cshtml" />
     <Content Include="Views\Superhero\List.cshtml" />
+    <Content Include="Views\Superhero\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
